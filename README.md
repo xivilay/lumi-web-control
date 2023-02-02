@@ -1,17 +1,46 @@
-LUMI is a fun midi keyboard which can light up its keys with different colors.
+# About
 
-This project is an effort to drive those lights without using the ROLI-provided software.
-It is based on reverse engineering the sysex commands that are used by ROLI Dashboard to communicate with LUMI.
+This project is based on the [fork](https://github.com/benoitjadinon/LUMI-lights) of [LUMI-lights](https://github.com/benob/LUMI-lights) project.
 
-The SYSEX API is described in SYSEX.txt
+It allows you to make configuration changes of your LUMI via browser.
 
-The default littlefoot program that is run on the LUMI is in "LUMI Keys Block Default Program.littlefoot"
-It is distributed in the resources of ROLI Dashboard.
+[**DEMO**](https://xivilay.github.io/lumi-web-control/)
 
-There is a `lumi_sysex.js` library which contains a few functions to control basic behaviour of the keyboard
-and an example index.html file which showcases how to use the library.
+# Notes
 
-The demo can be tried at https://benob.github.io/LUMI-lights/. It was only tested with a signle LUMI block (no other blocks attached).
+There are three ways to control LUMI keyboard:
 
-Notes:
-- to compile and send a different littlefoot program, you can use https://github.com/agraef/myblocks
+1) ## LUMI factory midi SYSEX messages
+
+    Some of them were reverse-engineered by [benob](https://github.com/benob) and thanks to that now it is possible to control it by any source capable of sending sysex (even browser)
+
+    A part of `sysex` API is described [here](https://github.com/benob/LUMI-lights/blob/master/SYSEX.txt)
+
+    The rest could be found in source code of [Roli Blocks api](https://github.com/WeAreROLI/roli_blocks_basics/tree/main/protocol)
+
+2) ## LittleFoot language
+
+    Littlefoot language was created by `Roli` and it allows to create function that will be executed right on the keyboard.
+
+    `*.littlefoot` files can be uploaded in `Roli Dashboard` by drag-and-drop to keyboard image in the app. ALternative way of editing and uploading littlefoot scripts is to use Roli `BLOCKSCode` editor. ([Win](https://assets.roli.com/blocks/BLOCKS+Code/0.2.3/BLOCKS_Code_Installer_v0.2.3.exe) & [Mac](https://assets.roli.com/blocks/BLOCKS+Code/0.2.3/BLOCKSCodeInstallerOSX_v0.2.3.mpkg) links)
+
+    ### Examples
+
+    There are some good LUMI specific examples [here](https://github.com/benob/LUMI-lights/tree/master/littlefoot). And there are more generic examples [here](https://github.com/WeAreROLI/roli_blocks_basics/tree/main/littlefoot/scripts), [here](https://github.com/WeAreROLI/Littlefoot-Examples) and [here](https://github.com/agraef/myblocks/tree/master/examples).
+
+    ### Documentation
+
+    [Read Me](https://github.com/WeAreROLI/roli_blocks_basics/blob/main/littlefoot/LittleFoot%20Language%20README.txt)
+    
+    [The LittleFoot Language](https://docs.juce.com/blocks/the_littlefoot_language.html)
+
+    [LittleFoot Functions](https://docs.juce.com/blocks/group__LittleFootFunctions.html)
+
+    [More functions](https://github.com/WeAreROLI/roli_blocks_basics/blob/main/roli_LittleFootFunctions.dox)
+
+
+3) ## C++ BLOCKS Api based on [JUCE framework](https://github.com/juce-framework/JUCE)
+
+    [BLOCKS SDK](https://github.com/WeAreROLI/BLOCKS-SDK)
+
+    [blocks_basics ~~JUCE~~ Roli module](https://github.com/WeAreROLI/roli_blocks_basics)
