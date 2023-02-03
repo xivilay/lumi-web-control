@@ -3,6 +3,9 @@ To be used with WebMidi. Note that sysex commands can only be sent if website is
 Also, you need to use a WebMidi enabled browser such as chromium.
 */
 
+const topologyIndex = 0x18;
+const topologyIndexAll = 0x00;
+
 var lumi = {
     input: null,
     output: null,
@@ -46,7 +49,7 @@ function BitArray() {
 }
 
 function send_sysex(values) {
-    values = [0x77, 0x18].concat(values).concat([checksum(values)]);
+    values = [0x77, topologyIndexAll].concat(values).concat([checksum(values)]);
     log('SEND ' + Array.from(values).map((e) => ('0' + e.toString(16)).slice(-2).toUpperCase()).join(' '));
     lumi.output.sendSysex([0x00, 0x21, 0x10], values);
 }
