@@ -146,9 +146,9 @@
         </p>
 
         <p>
-            Custom command: F0 00 21 10 77 30 <input type="text" id="command"
+            Custom command: F0 00 21 10 77 ??<input type="text" id="command"
                 oninput="checksum.value = update_checksum(command.value)"> <span id="checksum">??</span> F7 <button
-                type="button" onclick="run_command(command.value); return false;">Run</button>
+                type="button" onclick="run_command(topologyIndexAll.toString(16) + command.value); return false;">Run</button>
         </p>
 
         <p>
