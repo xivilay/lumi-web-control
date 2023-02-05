@@ -1,0 +1,32 @@
+.keys-container * {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.ReactPiano__Key--active {
+    background: #01A982;
+}
+
+input[type=color] {
+    padding: 0;
+}
+
+.color-picker {
+    border-radius: 5%;
+    height: 40px;
+    width: 100%;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.color-picker::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.color-picker::-webkit-color-swatch {
+    border-radius: 5%;
+}
