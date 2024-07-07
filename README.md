@@ -34,9 +34,9 @@ There are some good LUMI specific examples [here](https://github.com/benob/LUMI-
 
 [Read Me](https://github.com/WeAreROLI/roli_blocks_basics/blob/main/littlefoot/LittleFoot%20Language%20README.txt)
     
-[The LittleFoot Language](https://docs.juce.com/blocks/the_littlefoot_language.html)
+[The LittleFoot Language](https://weareroli.github.io/BLOCKS-SDK/the_littlefoot_language.html)
 
-[LittleFoot Functions](https://docs.juce.com/blocks/group__LittleFootFunctions.html)
+[LittleFoot Functions](https://weareroli.github.io/BLOCKS-SDK/group__LittleFootFunctions.html)
 
 [More functions](https://github.com/WeAreROLI/roli_blocks_basics/blob/main/roli_LittleFootFunctions.dox)
 
